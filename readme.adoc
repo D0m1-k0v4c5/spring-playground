@@ -1,0 +1,4 @@
+= Spring playground
+
+The purpose of the project is to try out some Spring functions.
+

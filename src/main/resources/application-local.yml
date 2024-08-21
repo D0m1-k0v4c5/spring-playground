@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb;Mode=Oracle
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 5 #default is 10
+
+  integration:
+    jdbc:
+      initialize-schema: NEVER
+
+  jpa:
+    hibernate.ddl-auto: none
+
+  liquibase:
+    contexts: ! datamigration
+    change-log: classpath:liquibase/changelog-root.xml
+    database-change-log-table: SP_DATABASECHANGELOG
+    database-change-log-lock-table: SP_DATABASECHANGELOGLOCK
+    enabled: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672

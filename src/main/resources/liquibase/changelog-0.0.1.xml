@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+                   logicalFilePath="liquibase/changelogs-0.0.1.xml">
+
+    <changeSet id="CREATE SEQUENCE SP_ID_SEQ" author="d0m1.k0v4c5" labels="spring-playground,v0.0.1">
+        <createSequence cacheSize="20" cycle="false" incrementBy="1" minValue="1" ordered="false"
+                        sequenceName="SP_ID_SEQ" startValue="1"/>
+    </changeSet>
+
+    <changeSet id="CREATE TABLE SP_ACCOUNT" author="d0m1.k0v4c5" labels="spring-playground,v0.0.1">
+        <createTable tableName="SP_ACCOUNT">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SP_ACCOUNT"/>
+            </column>
+            <column name="CREATED" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LAST_MODIFIED" type="DATETIME"/>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACCOUNT_NUMBER" type="VARCHAR2(34 CHAR)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACCOUNT_NAME" type="VARCHAR2(64 CHAR)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
